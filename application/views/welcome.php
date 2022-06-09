@@ -13,12 +13,10 @@
   <link href="<?= base_url() ?>assets_guest/css/etan.webflow.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <style type="text/css">
-    .img-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 10px;
-      width: 50%;
+    .img-resizer {
+      object-fit: cover !important;
+      width: 500px !important;
+      height: 150px;
     }
   </style>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Inconsolata:400,700","Merriweather:300,300italic,400,400italic,700,700italic,900,900italic","Gothic A1:100,200,300,regular,500,600,700,800,900"]  }});</script>
@@ -55,18 +53,17 @@
                   </nav>
                 </div>
                 <a href="<?= base_url() ?>" class="nav-link on-dark w-nav-link">Kontak</a>
-                <a href="<?= base_url() ?>Registrasi" class="nav-link on-dark w-nav-link">Registrasi</a>
               </div>
               <div class="menu-button w-nav-button"><img src="<?= base_url() ?>assets_guest/images/burger-menu-icon-white.svg" alt="" class="burger-menu-icon"></div>
               <div class="col lg-4 no-margin-bottom flexh-justify-end no-padding-right grow hidden-xs lg-2">
-                <div class="extra-menu"><a href="<?= base_url() ?>login" class="extra-menu-link margin-left nav-link on-dark">Login Di Sini!</a></div>
+                <div class="extra-menu"><a href="<?= base_url() ?>admin/login" class="extra-menu-link margin-left nav-link on-dark">Login Di Sini!</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="section is-header _100vh position-relative flexv-justify-end">
-        <div data-poster-url="videos/wavy-poster-00001.jpg" data-video-urls="<?= base_url() ?>assets_guest/videos/wavy-transcode.webm,<?= base_url() ?>assets_guest/videos/wavy-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="bg-video w-background-video w-background-video-atom"><video autoplay="" loop="" style="background-image:url(&quot;https://via.placeholder.com/1900x1000&quot;)" muted="" playsinline="" data-wf-ignore="true"><source src="<?= base_url() ?>assets_guest/videos/wavy-transcode.webm" data-wf-ignore="true"><source src="videos/wavy-transcode.webm" data-wf-ignore="true"></video></div>
+        <div data-poster-url="videos/wavy-poster-00001.jpg" data-video-urls="<?= base_url() ?>assets_guest/videos/wavy-transcode.webm,<?= base_url() ?>assets_guest/videos/wavy-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="bg-video w-background-video w-background-video-atom"><video autoplay="" loop="" style="background-image:url(&quot;<?= base_url() ?>assets_guest/videos/wavy-transcode.webm)" muted="" playsinline="" data-wf-ignore="true"><source src="<?= base_url() ?>assets_guest/videos/wavy-transcode.webm" data-wf-ignore="true"><source src="videos/wavy-transcode.webm" data-wf-ignore="true"></video></div>
           <div data-delay="4000" data-animation="outin" data-autoplay="1" data-duration="500" data-infinite="1" data-w-id="ba5d81d6-f355-4907-f1e1-029f7110022c" style="opacity:0" class="c-hero1__slider relative-zindex10 on-dark w-slider">
             <div class="w-slider-mask">
               <div data-w-id="3f5eea81-9fb1-a721-0d1d-72982ce34d08" class="w-slide">
@@ -79,7 +76,7 @@
                   </div>
                 </div>
                 <div class="container container-nested">
-                  <div class="col lg-12"><a href="<?= base_url() ?>login" class="cta-link on-dark"><span class="margin-right">Login</span><span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
+                  <div class="col lg-12"><a href="<?= base_url() ?>admin/login" class="cta-link on-dark"><span class="margin-right">Login</span><span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
                 </div>
               </div>
         <!-- <div data-w-id="ba5d81d6-f355-4907-f1e1-029f7110022e" class="w-slide">
@@ -144,23 +141,23 @@
         <p class="margin-bottom-double">Berikut kategori populer pariwisata bagi anda untuk dikunjungi</p>
         <div class="container container-nested is-wrapped">
           <div class="col lg-6 md-12">
-            <img src="<?= base_url() ?>assets_guest/images/danau.jpeg" alt="" class="margin-bottom">
-              <h4 class="no-margin-bottom">Danau</h4>
+            <img src="<?= base_url() ?>assets_guest/images/danau.jpeg" alt="" class="img-resizer margin-bottom">
+            <h4 class="no-margin-bottom">Danau</h4>
             <div>Deskripsi Pariwisata Kategori Danau</div>
           </div>
           <div class="col lg-6 md-12">
-              <img src="<?= base_url() ?>assets_guest/images/pantai.jpg" alt="" class="margin-bottom">
-              <h4 class="no-margin-bottom">Pantai</h4>
+            <img src="<?= base_url() ?>assets_guest/images/pantai.jpg" alt="" class="img-resizer margin-bottom">
+            <h4 class="no-margin-bottom">Pantai</h4>
             <div>Deskripsi Pariwisata Kategori Pantai</div>
           </div>
           <div class="col lg-6 md-12">
-            <img src="<?= base_url() ?>assets_guest/images/gunung.jpg" alt="" class="margin-bottom">
-              <h4 class="no-margin-bottom">Gunung</h4>
+            <img src="<?= base_url() ?>assets_guest/images/gunung.jpg" alt="" class="img-resizer margin-bottom">
+            <h4 class="no-margin-bottom">Gunung</h4>
             <div>Deskripsi Pariwisata Kategori Gunung</div>
           </div>
           <div class="col lg-6 md-12 md-no-margin-bottom">
-            <img src="<?= base_url() ?>assets_guest/images/taman.jpg" alt="" class="margin-bottom">
-              <h4 class="no-margin-bottom">Taman</h4>
+            <img src="<?= base_url() ?>assets_guest/images/taman.jpg" alt="" class="img-resizer margin-bottom">
+            <h4 class="no-margin-bottom">Taman</h4>
             <div>Deskripsi Pariwisata Kategori Taman</div>
           </div>
         </div>
@@ -212,23 +209,23 @@
         </div>
         <div class="container flex-horizontal is-wrapping">
           <div class="col lg-3 md-12">
-              <img src="<?= base_url() ?>assets_guest/images/toba.png" alt="" class="margin-right">
-              <h4 class="no-margin-bottom">Danau Toba</h4>
+            <img src="<?= base_url() ?>assets_guest/images/toba.png" alt="" class="img-resizer margin-right margin-bottom">
+            <h4 class="no-margin-bottom">Danau Toba</h4>
             <div class="margin-bottom">Deskripsi Pariwisata Danau Toba</div>
           </div>
           <div class="col lg-3 md-12">
-            <img src="<?= base_url() ?>assets_guest/images/pantai-wibura.png" alt="" class="margin-right">
-              <h4 class="no-margin-bottom">Pantai Wibura</h4>
+            <img src="<?= base_url() ?>assets_guest/images/pantai-wibura.png" alt="" class="img-resizer margin-right margin-bottom">
+            <h4 class="no-margin-bottom">Pantai Wibura</h4>
             <div class="margin-bottom">Deskripsi Pariwisata Pantai Wibura</div>
           </div>
           <div class="col lg-3 md-12">
-            <img src="<?= base_url() ?>assets_guest/images/coban-rondo.png" alt="" class="margin-right">
-              <h4 class="no-margin-bottom">Coban Rondo</h4>
+            <img src="<?= base_url() ?>assets_guest/images/coban-rondo.png" alt="" class="img-resizer margin-right margin-bottom">
+            <h4 class="no-margin-bottom">Coban Rondo</h4>
             <div class="margin-bottom">Deskripsi Pariwisata Coban Rondo</div>
           </div>
           <div class="col lg-3 md-12">
-            <img src="<?= base_url() ?>assets_guest/images/dieng.jpg" alt="" class="margin-right">
-              <h4 class="no-margin-bottom">Pegunungan Dieng</h4>
+            <img src="<?= base_url() ?>assets_guest/images/dieng.jpg" alt="" class="img-resizer margin-right margin-bottom">
+            <h4 class="no-margin-bottom">Pegunungan Dieng</h4>
             <div class="margin-bottom">Deskripsi Pariwisata Pegunungan Dieng</div>
           </div>
         </div>
@@ -394,7 +391,7 @@
         <div class="section section-footer-dark padding-bottom-16">
           <div class="container margin-bottom">
             <div class="col lg-2 md-12 md-order-first">
-              <h3 class="logotype on-dark">e—<br>tan</h3>
+              <h3 class="logotype on-dark">SIPEKA CREATOR</h3>
             </div>
             <div class="col lg-6 md-12 no-margin-bottom">
               <div class="container container-nested">
@@ -455,7 +452,7 @@
                   <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>daftar-wisata" class="offcanvas-menu-item item2">Daftar Wisata</a></div>
                   <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi-wisata" class="offcanvas-menu-item item3">Informasi Wisata</a></div>
                   <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-wisata" class="offcanvas-menu-item item4">Event Wisata</a></div>
-                  <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>login" class="offcanvas-menu-item item4">Login</a></div>
+                  <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>admin/login" class="offcanvas-menu-item item4">Login</a></div>
                 </div>
               </div>
               <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

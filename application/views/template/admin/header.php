@@ -82,6 +82,13 @@
               <span class="link-title">Konfigurasi</span>
             </a>
           </li>
+          <li class="nav-item nav-category">Logout</li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>admin/logout" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Logout</span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

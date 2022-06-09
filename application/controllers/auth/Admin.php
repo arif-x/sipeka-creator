@@ -29,7 +29,7 @@ class Admin extends CI_Controller {
 
 		if($this->admin_model->login($email, $password)){
 			$this->session->set_flashdata('flash', 'BerhasilLogin');
-			redirect('skala/');
+			redirect(base_url().'admin/wisata');
 			// echo "COK";
 		} else {
 			$this->session->set_flashdata('flash', 'GagalLogin');
@@ -41,6 +41,6 @@ class Admin extends CI_Controller {
 	public function logout()
 	{
 		$this->admin_model->logout();
-		redirect(site_url());
+		redirect(base_url());
 	}
 }	

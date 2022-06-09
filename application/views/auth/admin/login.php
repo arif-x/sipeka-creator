@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SIPEKA CREATOR - Login</title>
+    <title>SIPEKA CREATOR | Login</title>
     <!-- core:css -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/core/core.css">
     <!-- endinject -->
@@ -50,7 +50,9 @@
                                             </div>
                                             <div class="mt-3">
                                                 <button type="submit"
-                                                    class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</button>
+                                                class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</button>
+                                                <a type="button" href="<?= base_url() ?>" 
+                                                class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Kembali ke Halaman Awal</a>
                                             </div>
                                         </form>
                                     </div>
