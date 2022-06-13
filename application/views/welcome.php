@@ -379,46 +379,25 @@
                 <div class="pre-title is-left-aligned position-relative">Informasi & Berita</div>
                 <div class="pre-title-decoration"></div>
               </div>
-              <h2>Informasi & Berita</h2>
             </div>
           </div>
           <div class="container">
             <div class="col lg-12">
+              <h2>Informasi & Berita</h2>
               <div class="w-layout-grid c-grid2">
-                <a id="w-node-6c39528a0ead-f459a334" href="single-post.html" class="c-grid1__item img1 w-inline-block">
-                  <div class="c-grid1__overlay">
-                    <div class="c-grid__category">startup</div>
-                    <div class="c-grid1__title">Fintech 4.0 — How Technology Is Reshaping The $5 Trillion Insurance Sector</div>
-                  </div>
-                </a>
-                <a id="w-node-6c39528a0eb1-f459a334" href="single-post.html" class="c-grid1__item img2 w-inline-block">
-                  <div class="c-grid1__overlay">
-                    <div class="c-grid__category">Fintech</div>
-                    <div class="c-grid1__title">A Captive and Trivial Culture: Technology Ethics in a Tech-Consumed World</div>
-                  </div>
-                </a>
-                <a id="w-node-6c39528a0eb5-f459a334" href="single-post.html" class="c-grid1__item img3 w-inline-block">
-                  <div class="c-grid1__overlay">
-                    <div class="c-grid__category">UI / UX Design</div>
-                    <div class="c-grid1__title">The loom and the thresher: Lessons in technological worker displacement</div>
-                  </div>
-                </a>
-                <a id="w-node-6c39528a0eb9-f459a334" href="single-post.html" class="c-grid1__item img4 w-inline-block">
-                  <div class="c-grid1__overlay">
-                    <div class="c-grid__category">team management</div>
-                    <div class="c-grid1__title">Supercharged Ramen: The Future of Noodles Is Already Here</div>
-                  </div>
-                </a>
-                <a id="w-node-6c39528a0ebd-f459a334" href="single-post.html" class="c-grid1__item img5 w-inline-block">
-                  <div class="c-grid1__overlay">
-                    <div class="c-grid__category">future industry</div>
-                    <div class="c-grid1__title">Army of Women Earning $4 a Day Could Be Behind Your Next iPhone</div>
-                  </div>
-                </a>
+                <?php foreach ($informasi as $key => $value) { ?>
+                  <a id="w-node-6c39528a0eb5-f459a334" href="<?= base_url('informasi-wisata/').$value['slug'] ?>" class="c-grid1__item w-inline-block" style="background-image: url('<?= $value['img_informasi'] ?>');background-position: 50% 50%; background-size: cover;">
+                    <div class="c-grid1__overlay">
+                      <div class="c-grid__category"><?= $value['kategori_informasi'] ?></div>
+                      <div class="c-grid1__title"><?= $value['judul_informasi'] ?></div>
+                    </div>
+                  </a>
+                <?php }?>
               </div>
             </div>
           </div>
         </div>
+
         <div class="section section-footer-dark padding-bottom-16">
           <div class="container margin-bottom">
             <div class="col lg-2 md-12 md-order-first">

@@ -20,6 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome');
+		$data['informasi'] = $this->db->select('*')->from('informasi')->order_by('id_informasi', 'DESC')->join('kategori_informasi', 'kategori_informasi.id_kategori_informasi = informasi.id_kategori_informasi')->limit(6)->get()->result_array();
+		$data['event'] = $this->db->select('*')->from('event')->order_by('id_event', 'DESC')->join('kategori_event', 'kategori_event.id_kategori_event = event.id_kategori_event')->limit(6)->get()->result_array();
+		$this->load->view('welcome', $data);
 	}
 }
