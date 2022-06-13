@@ -37,6 +37,13 @@
       </div>
       <div class="sidebar-body">
         <ul class="nav">
+          <li class="nav-item nav-category">Kembali Ke Homepage</li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Home</span>
+            </a>
+          </li>
           <li class="nav-item nav-category">Dashboard</li>
           <li class="nav-item">
             <a href="<?= base_url() ?>admin/wisata" class="nav-link">

@@ -120,8 +120,26 @@
                       </div>
 
                       <div class="form-group">
+                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" type="text/css">
+                        <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+                        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+
+                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+
+                        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+                        <style type="text/css">
+                          #map {
+                            position: relative;
+                            width: 100%;
+                            height: 450px;
+                          }
+                        </style>
                         <label for="peta_maps">Peta Maps</label>
-                        <input type="text" name="peta_maps" id="peta_maps" class="form-control">
+                        <div id="map"></div>
+                        <!-- <input type="text" name="peta_maps" id="peta_maps" class="form-control"> -->
+                        <input type="hidden" name="latitude" id="latitude">
+                        <input type="hidden" name="longitude" id="longitude">
                       </div>
 
                       <div class="form-group">
@@ -177,7 +195,9 @@
       <!-- partial -->
     </div>
   </div>
+
   <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJpcG9uIiwiYSI6ImNrbjV3cmZ5NTA4aDUyd25zenk3MmlwYzgifQ.YbJ_Ir794eD8VlrVvpX64g';
     $('#tambah').click(function() {
       $('#saveBtn').val("add");
       $('#modalHeader').html("Tambah Wisata");
@@ -189,8 +209,41 @@
       $("#no_hp_wisata").val('');
       $("#website_wisata").val('');
       $("#alamat_wisata").val('');
-      $("#peta_maps").val('');
+      $("#latitude").val('');
+      $("#longitude").val('');
       $("#deskripsi_wisata").val('');
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',      
+        center: [112.63033862807194, -7.982580467907199],
+        zoom: 8
+      });
+
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl
+        })
+        );
+
+
+      map.on('style.load', function() {
+        map.on('click', function(e) {       
+          var coordinates = e.lngLat;
+          var lat = e.lngLat.wrap().lat;
+          $('#latitude').val(lat);
+          var lng = e.lngLat.wrap().lng;
+          $('#longitude').val(lng);
+          new mapboxgl.Popup()        
+          .setLngLat(coordinates)
+          .setHTML('')
+          .addTo(map);
+        });
+      }); 
+
+      map.on('load', function() {
+        map.resize();
+      });
       $('#modals').modal('show');
     });
 
@@ -221,8 +274,68 @@
           text : data.nama_desa_kelurahan
         }));
         $("#id_desa_kelurahan").val(data.id_desa_kelurahan);
-        $("#peta_maps").val(data.peta_maps);
-        $("#deskripsi_wisata").val(data.deskripsi_wisata)
+        $("#latitude").val(data.latitude);
+        $("#longitude").val(data.longitude);
+        $("#deskripsi_wisata").val(data.deskripsi_wisata);
+
+
+        document.getElementById("map").innerHTML = '';
+
+              var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [data.longitude, data.latitude],
+                zoom: 8
+              });             
+
+              map.addControl(
+                new MapboxGeocoder({
+                  accessToken: mapboxgl.accessToken,
+                  mapboxgl: mapboxgl
+                })
+                );
+
+              map.addControl(new mapboxgl.NavigationControl());
+
+              map.addControl(
+                new mapboxgl.GeolocateControl({
+                  positionOptions: {
+                    enableHighAccuracy: true
+                  },
+                  trackUserLocation: true
+                })
+                );
+
+              map.on('style.load', function() {
+                var coordinates = [data.longitude, data.latitude];
+                var lat = data.latitude;
+                $('#latitude').val(lat);
+                var lng = data.longitude;
+                $('#longitude').val(lng);
+                new mapboxgl.Popup()        
+                .setLngLat(coordinates)
+                .setHTML('')
+                .addTo(map);
+              }); 
+
+              map.on('style.load', function() {
+                map.on('click', function(e) {       
+                  var coordinates = e.lngLat;
+                  var lat = e.lngLat.wrap().lat;
+                  $('#latitude').val(lat);
+                  var lng = e.lngLat.wrap().lng;
+                  $('#longitude').val(lng);
+                  new mapboxgl.Popup()        
+                  .setLngLat(coordinates)
+                  .setHTML('')
+                  .addTo(map);
+                });
+              }); 
+
+
+              map.on('load', function() {
+                map.resize();
+              });
       });
 
       $('#modals').modal('show');

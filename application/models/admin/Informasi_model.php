@@ -15,12 +15,61 @@ class Informasi_model extends CI_Model {
 	}
 
 	public function store($data){
-		$query = $this->db->insert($this->table, $data);
+		$this->db->insert($this->table, $data);
+
+		$id = $this->db->insert_id();
+
+		$count = 0;
+		$name = url_title($this->input->post('judul_informasi'));
+		$slug_name = $name;
+		
+		while(true) {
+			$this->db->select('id_informasi');
+			$this->db->where('id_informasi !=', $id);
+			$this->db->where('slug', $slug_name);
+			$query = $this->db->get($this->table);
+			if ($query->num_rows() == 0){
+				break;
+			} else {
+				$slug_name = $name . '-' . (++$count);	
+			}
+		}
+
+		$slug = [
+			'slug' => $slug_name 
+		];
+
+		$this->db->where('id_informasi', $id)->update($this->table, $slug);
+		$query = $this->db->last_query();
+
 		return $query;
 	}
 
 	public function update($id_informasi, $data){
-		$query = $this->db->where('id_informasi', $id_informasi)->update($this->table, $data);
+		$count = 0;
+		$name = url_title($this->input->post('judul_informasi'));
+		$slug_name = $name;
+		
+		while(true) {
+			$this->db->select('id_informasi');
+			$this->db->where('id_informasi !=', $this->input->post('id_informasi'));
+			$this->db->where('slug', $slug_name);
+			$query = $this->db->get($this->table);
+			if ($query->num_rows() == 0){
+				break;
+			} else {
+				$slug_name = $name . '-' . (++$count);	
+			}
+		}
+
+		$this->db->where('id_informasi', $id_informasi)->update($this->table, $data);
+
+		$slug = [
+			'slug' => $slug_name 
+		];
+
+		$query = $this->db->where('id_informasi', $id_informasi)->update($this->table, $slug);
+
 		return $query;
 	}
 

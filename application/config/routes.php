@@ -115,7 +115,25 @@ $route['admin/config/show-provinsi'] = 'admin/config/show_provinsi';
 
 // ======================================================================= User
 // User Auth
-$route['login'] = 'auth/user/login';
-$route['register']['post'] = 'auth/user/register';
-$route['register']['get'] = 'auth/user/daftar';
+// $route['login'] = 'auth/user/login';
+// $route['register']['post'] = 'auth/user/register';
+// $route['register']['get'] = 'auth/user/daftar';
 
+// ======================================================================= Guest
+// Event
+$route['event-wisata'] = 'guest/event/index';
+$route['event-wisata/(:num)'] = 'guest/event/index/$1';
+$route['event-wisata/(:any)'] = 'guest/event/show/$1';
+
+// Informasi
+$route['informasi-wisata'] = 'guest/informasi/index';
+$route['informasi-wisata/(:num)'] = 'guest/informasi/index/$1';
+$route['informasi-wisata/(:any)'] = 'guest/informasi/show/$1';
+
+// Informasi
+$route['daftar-wisata'] = 'guest/wisata/index';
+$route['daftar-wisata/(:num)'] = 'guest/wisata/index/$1';
+$route['daftar-wisata/(:any)'] = 'guest/wisata/show/$1';
+
+// Maps
+$route['maps-wisata'] = 'guest/maps/index';

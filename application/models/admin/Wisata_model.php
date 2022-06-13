@@ -13,11 +13,61 @@ class Wisata_model extends CI_Model {
 	}
 
 	public function store($data){
-		return $this->db->insert($this->table, $data);
+		$this->db->insert($this->table, $data);
+		$id = $this->db->insert_id();
+
+		$count = 0;
+		$name = url_title($this->input->post('nama_wisata'));
+		$slug_name = $name;
+		
+		while(true) {
+			$this->db->select('id_wisata');
+			$this->db->where('id_wisata !=', $id);
+			$this->db->where('slug', $slug_name);
+			$query = $this->db->get($this->table);
+			if ($query->num_rows() == 0){
+				break;
+			} else {
+				$slug_name = $name . '-' . (++$count);	
+			}
+		}
+
+		$slug = [
+			'slug' => $slug_name 
+		];
+
+		$this->db->where('id_wisata', $id)->update($this->table, $slug);
+		$query = $this->db->last_query();
+
+		return $query;
 	}
 
 	public function update($id_wisata, $data){
-		return $this->db->where('id_wisata', $id_wisata)->update($this->table, $data);
+		$count = 0;
+		$name = url_title($this->input->post('nama_wisata'));
+		$slug_name = $name;
+		
+		while(true) {
+			$this->db->select('id_wisata');
+			$this->db->where('id_wisata !=', $this->input->post('id_wisata'));
+			$this->db->where('slug', $slug_name);
+			$query = $this->db->get($this->table);
+			if ($query->num_rows() == 0){
+				break;
+			} else {
+				$slug_name = $name . '-' . (++$count);	
+			}
+		}
+		
+		$this->db->where('id_wisata', $id_wisata)->update($this->table, $data);
+
+		$slug = [
+			'slug' => $slug_name 
+		];
+
+		$query = $this->db->where('id_wisata', $id_wisata)->update($this->table, $slug);
+
+		return $query;
 	}
 
 	public function destroy($id_wisata){
