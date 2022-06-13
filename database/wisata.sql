@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 12:11 PM
+-- Generation Time: Jun 13, 2022 at 07:50 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -58,7 +58,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id_config`, `nama_config`, `value`) VALUES
-(1, 'Provinsi', 35);
+(1, 'Provinsi', 33);
 
 -- --------------------------------------------------------
 
@@ -75,17 +75,16 @@ CREATE TABLE `event` (
   `datetime_mulai_registrasi` varchar(255) NOT NULL,
   `datetime_akhir_registrasi` varchar(255) NOT NULL,
   `datetime_mulai_event` varchar(255) NOT NULL,
-  `datetime_akhir_event` varchar(255) NOT NULL
+  `datetime_akhir_event` varchar(255) NOT NULL,
+  `slug` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`id_event`, `id_kategori_event`, `nama_event`, `thumbnail`, `lokasi`, `datetime_mulai_registrasi`, `datetime_akhir_registrasi`, `datetime_mulai_event`, `datetime_akhir_event`) VALUES
-(3, 1, 'COK', 'https://images.tokopedia.net/img/cache/500-square/product-1/2017/9/4/0/0_4fb05e35-6eb7-4849-84c5-60663c0cc1f5_488_583.jpg', 'Posisi', '2022-06-08', '2022-06-09', '2022-06-10', '2022-11-09'),
-(4, 1, 'coklah', 'https://images.tokopedia.net/img/cache/500-square/product-1/2017/9/4/0/0_4fb05e35-6eb7-4849-84c5-60663c0cc1f5_488_583.jpg', 'Posisi', '2022-01-01', '2022-01-01', '2022-01-01', '2022-01-01'),
-(5, 1, 'iki event cok', 'http://localhost/wisata/upload/event/2022-06-08-07-32-02.png', 'asd', '2022-12-31', '2022-12-31', '2021-12-31', '2022-12-31');
+INSERT INTO `event` (`id_event`, `id_kategori_event`, `nama_event`, `thumbnail`, `lokasi`, `datetime_mulai_registrasi`, `datetime_akhir_registrasi`, `datetime_mulai_event`, `datetime_akhir_event`, `slug`) VALUES
+(9, 1, 'Ngaben', 'https://images.tokopedia.net/img/cache/500-square/product-1/2017/9/4/0/0_4fb05e35-6eb7-4849-84c5-60663c0cc1f5_488_583.jpg', 'Bali Lah', '2022-01-01', '2022-01-01', '2022-01-01', '2022-01-01', 'Ngaben');
 
 -- --------------------------------------------------------
 
@@ -99,16 +98,16 @@ CREATE TABLE `informasi` (
   `judul_informasi` varchar(255) NOT NULL,
   `img_informasi` text NOT NULL,
   `konten` text NOT NULL,
-  `tanggal` varchar(255) NOT NULL
+  `tanggal` varchar(255) NOT NULL,
+  `slug` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `informasi`
 --
 
-INSERT INTO `informasi` (`id_informasi`, `id_kategori_informasi`, `judul_informasi`, `img_informasi`, `konten`, `tanggal`) VALUES
-(2, 2, 'asu cok', 'https://www.99.co/blog/indonesia/wp-content/uploads/2021/12/gambar-fauna-kepik.jpg', 'asu kowe', '2022-01-01'),
-(3, 2, 'asu kowe', 'http://localhost/wisata/upload/informasi/2022-06-08-07-30-03.png', 'JANCOK', '2022-01-01');
+INSERT INTO `informasi` (`id_informasi`, `id_kategori_informasi`, `judul_informasi`, `img_informasi`, `konten`, `tanggal`, `slug`) VALUES
+(2, 2, 'Buka Tutup Wisata Ini', 'https://www.99.co/blog/indonesia/wp-content/uploads/2021/12/gambar-fauna-kepik.jpg', 'Wisata ini akan tutup pada tanggal sekian dan akan dibuka kembali pada tanggal sekian', '2022-01-01', 'Buka-Tutup-Wisata-Ini');
 
 -- --------------------------------------------------------
 
@@ -126,7 +125,7 @@ CREATE TABLE `kategori_event` (
 --
 
 INSERT INTO `kategori_event` (`id_kategori_event`, `kategori_event`) VALUES
-(1, 'Iki Kategori');
+(1, 'Upacara');
 
 -- --------------------------------------------------------
 
@@ -144,7 +143,7 @@ CREATE TABLE `kategori_informasi` (
 --
 
 INSERT INTO `kategori_informasi` (`id_kategori_informasi`, `kategori_informasi`) VALUES
-(2, 'JANCOK');
+(2, 'Buka Tutup');
 
 -- --------------------------------------------------------
 
@@ -91567,22 +91566,24 @@ CREATE TABLE `wisata` (
   `no_hp_wisata` varchar(255) DEFAULT NULL,
   `website_wisata` varchar(255) DEFAULT NULL,
   `alamat_wisata` text DEFAULT NULL,
-  `peta_maps` varchar(255) DEFAULT NULL,
+  `latitude` varchar(255) DEFAULT NULL,
+  `longitude` varchar(255) NOT NULL,
   `id_kategori_wisata` int(11) DEFAULT NULL,
   `deskripsi_wisata` text DEFAULT NULL,
   `img` text DEFAULT NULL,
   `id_provinsi` char(2) DEFAULT NULL,
   `id_kota_kab` char(5) DEFAULT NULL,
   `id_kecamatan` char(8) DEFAULT NULL,
-  `id_desa_kelurahan` char(13) DEFAULT NULL
+  `id_desa_kelurahan` char(13) DEFAULT NULL,
+  `slug` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wisata`
 --
 
-INSERT INTO `wisata` (`id_wisata`, `nama_wisata`, `email_wisata`, `no_hp_wisata`, `website_wisata`, `alamat_wisata`, `peta_maps`, `id_kategori_wisata`, `deskripsi_wisata`, `img`, `id_provinsi`, `id_kota_kab`, `id_kecamatan`, `id_desa_kelurahan`) VALUES
-(2, 'JANCOK', 'isdfh', '088', 'sidgf', 'siduf', 'ldskfhl', 2, 'skdjgf', 'http://localhost/wisata/upload/wisata/2022-06-08-09-47-36.jpeg', '35', '3521', '352101', '3521012001');
+INSERT INTO `wisata` (`id_wisata`, `nama_wisata`, `email_wisata`, `no_hp_wisata`, `website_wisata`, `alamat_wisata`, `latitude`, `longitude`, `id_kategori_wisata`, `deskripsi_wisata`, `img`, `id_provinsi`, `id_kota_kab`, `id_kecamatan`, `id_desa_kelurahan`, `slug`) VALUES
+(2, 'Semarang Park', 'wisata@email.com', '08889182389', 'https://localhost/wisata', 'Rumah', '-6.997488759676713', '110.4175680135063', 2, 'Ini Adalah Wisata Alam Dari Semarang', 'http://localhost/wisata/upload/wisata/2022-06-08-09-47-36.jpeg', '33', '3374', '337404', '3374041001', 'Semarang-Park');
 
 --
 -- Indexes for dumped tables
@@ -91695,7 +91696,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `informasi`
