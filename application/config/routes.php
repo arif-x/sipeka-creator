@@ -53,6 +53,8 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['about'] = 'guest/about/index';
+$route['kontak'] = 'guest/kontak/index';
 
 // ======================================================================= Admin
 // Admin Auth
@@ -72,6 +74,18 @@ $route['admin/event/store'] = 'admin/event/store';
 $route['admin/event/show/(:num)'] = 'admin/event/show/$1';
 $route['admin/event/update'] = 'admin/event/update';
 $route['admin/event/destroy'] = 'admin/event/destroy';
+
+// Slider Text
+$route['admin/slider-text'] = 'admin/slidertext/index';
+$route['admin/slider-text/store'] = 'admin/slidertext/store';
+$route['admin/slider-text/show/(:num)'] = 'admin/slidertext/show/$1';
+$route['admin/slider-text/update'] = 'admin/slidertext/update';
+$route['admin/slider-text/destroy'] = 'admin/slidertext/destroy';
+
+// Slider
+$route['admin/slider'] = 'admin/slider/index';
+$route['admin/slider/show/(:num)'] = 'admin/slider/show/$1';
+$route['admin/slider/update'] = 'admin/slider/update';
 
 // Kategori Event
 $route['admin/kategori/event'] = 'admin/kategorievent/index';

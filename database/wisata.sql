@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 07:50 AM
+-- Generation Time: Jun 28, 2022 at 06:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -153,15 +153,18 @@ INSERT INTO `kategori_informasi` (`id_kategori_informasi`, `kategori_informasi`)
 
 CREATE TABLE `kategori_wisata` (
   `id_kategori_wisata` int(11) NOT NULL,
-  `kategori_wisata` varchar(255) NOT NULL
+  `kategori_wisata` varchar(255) NOT NULL,
+  `img_kategori_wisata` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kategori_wisata`
 --
 
-INSERT INTO `kategori_wisata` (`id_kategori_wisata`, `kategori_wisata`) VALUES
-(2, 'Enak-enak');
+INSERT INTO `kategori_wisata` (`id_kategori_wisata`, `kategori_wisata`, `img_kategori_wisata`) VALUES
+(2, 'Danau', 'http://localhost/wisata/upload/wisata/2022-06-16-03-57-28.jpeg'),
+(3, 'Gunung', 'http://localhost/wisata/upload/wisata/2022-06-16-03-57-42.jpg'),
+(4, 'Pantai', 'http://localhost/wisata/upload/wisata/2022-06-16-05-01-48.jpeg');
 
 -- --------------------------------------------------------
 
@@ -91533,6 +91536,43 @@ INSERT INTO `reg_villages` (`id`, `district_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `slider`
+--
+
+CREATE TABLE `slider` (
+  `id_slider` int(11) NOT NULL,
+  `slider` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id_slider`, `slider`) VALUES
+(2, 'http://localhost/wisata/upload/slider/Suka_blyat_meme.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider_text`
+--
+
+CREATE TABLE `slider_text` (
+  `id_slider_text` int(11) NOT NULL,
+  `slider_text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slider_text`
+--
+
+INSERT INTO `slider_text` (`id_slider_text`, `slider_text`) VALUES
+(2, 'Sistem Informasi Pariwisata dan Ekonomi Kreatif di Asosiasi Creative Economy Accelerator (CREATOR)'),
+(3, 'Okeh');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -91583,7 +91623,8 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`id_wisata`, `nama_wisata`, `email_wisata`, `no_hp_wisata`, `website_wisata`, `alamat_wisata`, `latitude`, `longitude`, `id_kategori_wisata`, `deskripsi_wisata`, `img`, `id_provinsi`, `id_kota_kab`, `id_kecamatan`, `id_desa_kelurahan`, `slug`) VALUES
-(2, 'Semarang Park', 'wisata@email.com', '08889182389', 'https://localhost/wisata', 'Rumah', '-6.997488759676713', '110.4175680135063', 2, 'Ini Adalah Wisata Alam Dari Semarang', 'http://localhost/wisata/upload/wisata/2022-06-08-09-47-36.jpeg', '33', '3374', '337404', '3374041001', 'Semarang-Park');
+(2, 'Semarang Park', 'wisata@email.com', '08889182389', 'https://localhost/wisata', 'Rumah', '-6.997488759676713', '110.4175680135063', 2, 'Ini Adalah Wisata Alam Dari Semarang', 'http://localhost/wisata/upload/wisata/2022-06-08-09-47-36.jpeg', '33', '3374', '337404', '3374041001', 'Semarang-Park'),
+(3, 'Gunung', 'Gunung@email.com', '+62822', 'gunung.com', 'alamat', '-7.375933507815574', '110.96360838267924', 3, 'Iki Gunung', 'http://localhost/wisata/upload/wisata/2022-06-16-04-47-12.jpg', '33', '3301', '330101', '3301012001', 'Gunung');
 
 --
 -- Indexes for dumped tables
@@ -91665,6 +91706,18 @@ ALTER TABLE `reg_villages`
   ADD KEY `villages_district_id_index` (`district_id`);
 
 --
+-- Indexes for table `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id_slider`);
+
+--
+-- Indexes for table `slider_text`
+--
+ALTER TABLE `slider_text`
+  ADD PRIMARY KEY (`id_slider_text`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -91720,13 +91773,25 @@ ALTER TABLE `kategori_informasi`
 -- AUTO_INCREMENT for table `kategori_wisata`
 --
 ALTER TABLE `kategori_wisata`
-  MODIFY `id_kategori_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kategori_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kota_kab`
 --
 ALTER TABLE `kota_kab`
   MODIFY `id_kota_kab` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `slider_text`
+--
+ALTER TABLE `slider_text`
+  MODIFY `id_slider_text` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -91738,7 +91803,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

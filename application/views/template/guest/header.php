@@ -80,7 +80,7 @@
             </div>
             <div class="col lg-4 no-margin-bottom flexh-justify-center position-absolute-md lg-8">
               <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="about.html" class="nav-link on-dark w-nav-link">About</a>
+                <a href="<?= base_url() ?>about" class="nav-link on-dark w-nav-link">About</a>
                 <div data-hover="1" data-delay="0" data-w-id="7d050a59-b525-e710-dbfb-70b18fafaf1a" class="nav-dropdown w-dropdown">
                   <div class="nav-link on-dark w-dropdown-toggle">
                     <div class="w-icon-dropdown-toggle"></div>
@@ -93,7 +93,7 @@
                     <a href="<?= base_url() ?>event-wisata" class="dropdown-link w-dropdown-link">Event Wisata</a>
                   </nav>
                 </div>
-                <a href="<?= base_url() ?>" class="nav-link on-dark w-nav-link">Kontak</a>
+                <a href="<?= base_url() ?>kontak" class="nav-link on-dark w-nav-link">Kontak</a>
               </div>
               <div class="menu-button w-nav-button"><img src="<?= base_url() ?>assets_guest/images/burger-menu-icon-white.svg" alt="" class="burger-menu-icon"></div>
               <div class="col lg-4 no-margin-bottom flexh-justify-end no-padding-right grow hidden-xs lg-2">

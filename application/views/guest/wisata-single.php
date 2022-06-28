@@ -26,68 +26,97 @@
         <div class="c-article__date-divider"></div>
       </div>
     </div>
-    <div class="container">
       <div class="col lg-12 md-12">
         <div class="rich-text w-richtext">
           <div class="margin-bottom-double">
-            <img src="<?= $wisata[0]['img'] ?>" class="img-news img-center">
+            <div class="container is-fullwidth flex-horizontal">
+              <div class="col lg-6 md-12">
+                <div class="container">
+                  <div class="col lg-12">
+                    <div class="pre-title-container">
+                      <div class="pre-title is-left-aligned">Deskripsi Wisata</div>
+                      <div class="pre-title-decoration"></div>
+                    </div>
+                    <h2><?= $wisata[0]['nama_wisata'] ?></h2>
+                  </div>
+                </div>
+                <div class="container is-wrapped">
+                  <div class="col lg-6 md-12">
+                    <h4>Nama Wisata</h4>
+                    <div><?= $wisata[0]['nama_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Jenis Wisata</h4>
+                    <div><?= $wisata[0]['kategori_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>No. HP Wisata</h4>
+                    <div><?= $wisata[0]['no_hp_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Email Wisata</h4>
+                    <div><?= $wisata[0]['email_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Website Wisata</h4>
+                    <div><?= $wisata[0]['website_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Alamat Wisata</h4>
+                    <div><?= $wisata[0]['alamat_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Maps Wisata</h4>
+                    <div><?= $wisata[0]['latitude'] . ' - ' . $wisata[0]['longitude'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Deskripsi Wisata</h4>
+                    <div><?= $wisata[0]['deskripsi_wisata'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Provinsi</h4>
+                    <div><?= $wisata[0]['nama_provinsi'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Kabupaten/Kota</h4>
+                    <div><?= $wisata[0]['nama_kota_kab'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Kabupaten/Kota</h4>
+                    <div><?= $wisata[0]['nama_kota_kab'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Kecamatan</h4>
+                    <div><?= $wisata[0]['nama_kecamatan'] ?></div>
+                  </div>
+                
+                  <div class="col lg-6 md-12">
+                    <h4>Desa/Kelurahan</h4>
+                    <div><?= $wisata[0]['nama_desa_kelurahan'] ?></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col lg-6 md-12 order-first position-relative">
+                <div class="image-w-stripe-container2" style="background-image: url('<?= $wisata[0]["img"] ?>'); background-repeat: no-repeat;">
+                  <!-- <img src="<?= $wisata[0]['img'] ?>"> -->
+                  <div data-w-id="f9f2bb5b-6ce5-7adb-0a16-77d28b901ea1" class="stripes2">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <table class="table">
-            <tr>
-              <th>Nama Wisata</th>
-              <th><?= $wisata[0]['nama_wisata'] ?></th>
-            </tr>
-            <tr>
-              <td>Kategori Wisata</td>
-              <td><?= $wisata[0]['kategori_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Email Wisata</td>
-              <td><?= $wisata[0]['email_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>No. HP Wisata</td>
-              <td><?= $wisata[0]['email_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Email Wisata</td>
-              <td><?= $wisata[0]['no_hp_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Website Wisata</td>
-              <td><?= $wisata[0]['website_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Alamat Wisata</td>
-              <td><?= $wisata[0]['alamat_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Maps Wisata</td>
-              <td><?= $wisata[0]['latitude'] . '-' . $wisata[0]['longitude'] ?></td>
-            </tr>
-            <tr>
-              <td>Deskripsi Wisata</td>
-              <td><?= $wisata[0]['deskripsi_wisata'] ?></td>
-            </tr>
-            <tr>
-              <td>Provinsi</td>
-              <td><?= $wisata[0]['nama_provinsi'] ?></td>
-            </tr>
-            <tr>
-              <td>Kabupaten/Kota</td>
-              <td><?= $wisata[0]['nama_kota_kab'] ?></td>
-            </tr>
-            <tr>
-              <td>Kecamatan</td>
-              <td><?= $wisata[0]['nama_kecamatan'] ?></td>
-            </tr>
-            <tr>
-              <td>Desa/Kelurahan</td>
-              <td><?= $wisata[0]['nama_desa_kelurahan'] ?></td>
-            </tr>
-          </table>
-        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,7 @@
-<div class="section is-header bg-accent-dark has-bg-img img-blog overflow-hidden position-relative">
+<div class="section is-header bg-accent-dark img-blog overflow-hidden position-relative" style="background-image: url('<?= $latest_single[0]['img_informasi'] ?>');
+  background-position: 47vw 50%;
+  background-size: 1230px;
+  background-repeat: no-repeat;">
   <div class="container flex-horizontal position-relative">
     <div class="col lg-7 md-12">
       <div class="breadcrumb margin-bottom-double"><a href="<?= base_url() ?>">Home</a><span class="fa margin-left-small margin-right-small is-xsmall"></span>Informasi</div>

@@ -26,21 +26,66 @@ class KategoriWisata extends CI_Controller {
 	}
 
 	public function store(){
-		$data = [
-			'kategori_wisata' => $this->input->post('kategori_wisata'), 
-		];
+		$files = $_FILES['img_kategori_wisata']['tmp_name'];
+		$files_data = explode('.', $_FILES['img_kategori_wisata']['name']);
+		$extension = end($files_data);
+		$originalImgName = date("Y-m-d-H:i:s") .'.'. $extension;
+		$new_name = str_replace(':', '-', $originalImgName);
 
-		$insert = $this->kategoriwisata_model->store($data);
-		return redirect(base_url().'admin/kategori/wisata');
+		$config['upload_path'] = FCPATH.'/upload/wisata/';
+		$config['allowed_types'] = 'jpeg|gif|png|jpg';
+		$config['file_name'] = $new_name;
+		$config['overwrite'] = true;
+
+		$urlfix = base_url() . "upload/wisata/" . $new_name;
+
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload('img_kategori_wisata')){
+			$data = [
+				'kategori_wisata' => $this->input->post('kategori_wisata'), 
+				'img_kategori_wisata' => $urlfix,
+			];
+
+			$insert = $this->kategoriwisata_model->store($data);
+			return redirect(base_url().'admin/kategori/wisata');
+		} else {
+			echo "Gagal upload file";
+		}
 	}
 
 	public function update(){
-		$data = [
-			'kategori_wisata' => $this->input->post('kategori_wisata'), 
-		];
+		$files = $_FILES['img_kategori_wisata']['tmp_name'];
+		$files_data = explode('.', $_FILES['img_kategori_wisata']['name']);
+		$extension = end($files_data);
+		$originalImgName = date("Y-m-d-H:i:s") .'.'. $extension;
+		$new_name = str_replace(':', '-', $originalImgName);
 
-		$update = $this->kategoriwisata_model->update($this->input->post('id_kategori_wisata'), $data);
-		return redirect(base_url().'admin/kategori/wisata');
+		$config['upload_path'] = FCPATH.'/upload/wisata/';
+		$config['allowed_types'] = 'jpeg|gif|png|jpg';
+		$config['file_name'] = $new_name;
+		$config['overwrite'] = true;
+
+		$urlfix = base_url() . "upload/wisata/" . $new_name;
+
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload('img_kategori_wisata')){
+			$data = [
+				'kategori_wisata' => $this->input->post('kategori_wisata'), 
+				'img_kategori_wisata' => $urlfix
+			];
+
+			$update = $this->kategoriwisata_model->update($this->input->post('id_kategori_wisata'), $data);
+			return redirect(base_url().'admin/kategori/wisata');
+		} else {
+			$data = [
+				'kategori_wisata' => $this->input->post('kategori_wisata'), 
+			];
+
+			$update = $this->kategoriwisata_model->update($this->input->post('id_kategori_wisata'), $data);
+			return redirect(base_url().'admin/kategori/wisata');
+		}
 	}
 
 	public function destroy(){

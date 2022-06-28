@@ -84,6 +84,18 @@
           </li>
           <li class="nav-item nav-category">Konfigurasi</li>
           <li class="nav-item">
+            <a href="<?= base_url() ?>admin/slider" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Slider Video</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>admin/slider-text" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Slider Text</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= base_url() ?>admin/config" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Konfigurasi</span>
