@@ -97,24 +97,24 @@
             <div data-delay="4000" data-animation="outin" data-autoplay="1" data-duration="500" data-infinite="1" data-w-id="ba5d81d6-f355-4907-f1e1-029f7110022c" style="opacity:0" class="c-hero1__slider relative-zindex10 on-dark w-slider">
               <div class="w-slider-mask">
 
-            <?php
-            foreach ($slider_text as $key => $value) {
-            ?>
-                <div data-w-id="3f5eea81-9fb1-a721-0d1d-72982ce34d08" class="w-slide">
-                  <div class="container container-nested flex-horizontal">
-                    <div class="col lg-7 md-12">
-                      <h1 class="heading-beta on-dark">SIPEKA CREATOR</h1>
+                <?php
+                foreach ($slider_text as $key => $value) {
+                  ?>
+                  <div data-w-id="3f5eea81-9fb1-a721-0d1d-72982ce34d08" class="w-slide">
+                    <div class="container container-nested flex-horizontal">
+                      <div class="col lg-7 md-12">
+                        <h1 class="heading-beta on-dark">SIPEKA CREATOR</h1>
+                      </div>
+                      <div class="col lg-5 md-12 flexv-justify-end">
+                        <p style="-webkit-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-large weight-is-thin"><?= $value['slider_text'] ?></p>
+                      </div>
                     </div>
-                    <div class="col lg-5 md-12 flexv-justify-end">
-                      <p style="-webkit-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 27PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="text-large weight-is-thin"><?= $value['slider_text'] ?></p>
+                    <div class="container container-nested">
+                      <div class="col lg-12"><a href="<?= base_url() ?>admin/login" class="cta-link on-dark"><span class="margin-right">Login</span><span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
                     </div>
                   </div>
-                  <div class="container container-nested">
-                    <div class="col lg-12"><a href="<?= base_url() ?>admin/login" class="cta-link on-dark"><span class="margin-right">Login</span><span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
-                  </div>
-                </div>
-                
-            <?php } ?>
+                  
+                <?php } ?>
               </div>
               <div class="c-hero1__left-arrow w-slider-arrow-left">
                 <div class="c-hero1__left-arrow-icon w-icon-slider-left"></div>
