@@ -13,7 +13,7 @@
     <script>
         L.mapbox.accessToken = 'pk.eyJ1IjoiYXJpcG9uIiwiYSI6ImNrbjV3cmZ5NTA4aDUyd25zenk3MmlwYzgifQ.YbJ_Ir794eD8VlrVvpX64g';
         var map = L.mapbox.map('map')
-        .setView([-7.9666204, 112.6326321], 7)
+        .setView([2.004180, 124.371678], 7)
         .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
         <?php foreach ($maps as $key => $value) { ?>
             var marker = L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>], {

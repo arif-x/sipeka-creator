@@ -30,9 +30,9 @@
                     <div class="col-md-8 col-xl-6 mx-auto">
                         <div class="card">
                             <div class="row">
-                                <div class="col-md-4 pr-md-0">
+                                <div class="col-md-4">
                                     <div class="auth-left-wrapper">
-
+                                        <img src="<?= base_url() ?>/assets_guest/images/bali-beach.jpg" style="object-fit: cover !important;width: 219px !important;height: 400px;">
                                     </div>
                                 </div>
                                 <div class="col-md-8 pl-md-0">
@@ -52,31 +52,31 @@
                                                 <button type="submit"
                                                 class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</button>
                                                 <a type="button" href="<?= base_url() ?>" 
-                                                class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Kembali ke Halaman Awal</a>
-                                            </div>
-                                        </form>
+                                                    class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Kembali ke Halaman Awal</a>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- core:js -->
-    <script src="<?= base_url() ?>assets/vendors/core/core.js"></script>
-    <!-- endinject -->
-    <!-- plugin js for this page -->
-    <!-- end plugin js for this page -->
-    <!-- inject:js -->
-    <script src="<?= base_url() ?>assets/vendors/feather-icons/feather.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/template.js"></script>
-    <!-- endinject -->
-    <!-- custom js for this page -->
-    <!-- end custom js for this page -->
-</body>
+        <!-- core:js -->
+        <script src="<?= base_url() ?>assets/vendors/core/core.js"></script>
+        <!-- endinject -->
+        <!-- plugin js for this page -->
+        <!-- end plugin js for this page -->
+        <!-- inject:js -->
+        <script src="<?= base_url() ?>assets/vendors/feather-icons/feather.min.js"></script>
+        <script src="<?= base_url() ?>assets/js/template.js"></script>
+        <!-- endinject -->
+        <!-- custom js for this page -->
+        <!-- end custom js for this page -->
+    </body>
 
-</html>
+    </html>

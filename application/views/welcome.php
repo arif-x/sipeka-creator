@@ -266,7 +266,7 @@
                     <script type="text/javascript">
                       L.mapbox.accessToken = 'pk.eyJ1IjoiYXJpcG9uIiwiYSI6ImNrbjV3cmZ5NTA4aDUyd25zenk3MmlwYzgifQ.YbJ_Ir794eD8VlrVvpX64g';
                       var map = L.mapbox.map('map')
-                      .setView([-7.9666204, 112.6326321], 7)
+                      .setView([2.004180, 124.371678], 7)
                       .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
                       <?php foreach ($maps as $key => $value) { ?>
                         var marker = L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>], {
@@ -320,23 +320,8 @@
               </div>
               <div class="col lg-6 md-12 no-margin-bottom">
                 <div class="container container-nested">
-                  <div class="col lg-4 md-12">
-                    <h4>Service</h4><a href="#" class="footer-nav-link on-dark">Development team</a><a href="#" class="footer-nav-link on-dark">Mobile app</a><a href="#" class="footer-nav-link on-dark">Enterprise software</a><a href="#" class="footer-nav-link on-dark">DevOps</a>
-                  </div>
-                  <div class="col lg-4 md-12">
-                    <h4>Company</h4><a href="#" class="footer-nav-link on-dark">About</a><a href="#" class="footer-nav-link on-dark">Our Work</a><a href="#" class="footer-nav-link on-dark">News</a><a href="#" class="footer-nav-link on-dark">Career</a>
-                  </div>
-                  <div class="col lg-4 no-margin-bottom-lg md-12">
+                  <div class="col lg-8 no-margin-bottom-lg md-12">
                     <h4>Let&#x27;s connect</h4>
-                    <a href="#" class="footer-nav-link-2 on-dark w-inline-block">
-                      <div><span class="fa-brand w24"></span> LinkedIn</div>
-                    </a>
-                    <a href="#" class="footer-nav-link-2 on-dark w-inline-block">
-                      <div><span class="fa-brand w24"></span> Youtube</div>
-                    </a>
-                    <a href="#" class="footer-nav-link-2 on-dark w-inline-block">
-                      <div><span class="fa-brand w24"></span> Facebook</div>
-                    </a>
                     <a href="#" class="footer-nav-link-2 on-dark w-inline-block">
                       <div><span class="fa-brand w24"></span> Instagram</div>
                     </a>
@@ -365,11 +350,10 @@
             <div class="container">
               <div class="col lg-6 no-margin-bottom md-12 md-order-last">
                 <div class="low-text-contrast text-small flexh-space-between md-flex-vertical">
-                  <div class="md-order-last">©2019 Etan Kali, Co. All rights reserved. </div><a href="#" class="footer-bottom-link">Privacy Policy</a><a href="#" class="footer-bottom-link">Term Of Service</a>
                 </div>
               </div>
               <div class="col lg-6 no-margin-bottom md-12">
-                <div class="w100 text-align-right footer-bottom md-text-align-left margin-bottom">Made in Surabaja, Indonesia</div>
+                <!-- <div class="w100 text-align-right footer-bottom md-text-align-left margin-bottom">Made in Surabaja, Indonesia</div> -->
               </div>
             </div>
           </div>
@@ -396,7 +380,6 @@
           </div>
           <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
           <script src="<?= base_url() ?>assets_guest/js/webflow.js" type="text/javascript"></script>
-          <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
           </body>
 
           </html>
