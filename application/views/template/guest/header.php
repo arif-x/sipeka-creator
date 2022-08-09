@@ -111,9 +111,11 @@
                   <div>Informasi</div>
                 </div>
                 <nav class="dropdown-list w-dropdown-list">
+                  <a href="<?= base_url() ?>pelaku-ekraf" class="dropdown-link w-dropdown-link">Pelaku Ekraf</a>
+                  <a href="<?= base_url() ?>event-ekraf" class="dropdown-link w-dropdown-link">Event Ekraf</a>
                   <a href="<?= base_url() ?>maps-wisata" class="dropdown-link w-dropdown-link">Maps Wisata</a>
                   <a href="<?= base_url() ?>daftar-wisata" class="dropdown-link w-dropdown-link">Daftar Wisata</a>
-                  <a href="<?= base_url() ?>informasi-wisata" class="dropdown-link w-dropdown-link">Informasi Wisata</a>
+                  <a href="<?= base_url() ?>informasi-wisata" class="dropdown-link w-dropdown-link">Informasi</a>
                   <a href="<?= base_url() ?>event-wisata" class="dropdown-link w-dropdown-link">Event Wisata</a>
                 </nav>
               </div>

@@ -61,7 +61,7 @@ $route['kontak'] = 'guest/kontak/index';
 $route['admin/login'] = 'auth/admin/login';
 $route['admin/logout'] = 'auth/admin/logout';
 
-// Event
+// Informasi
 $route['admin/informasi'] = 'admin/informasi/index';
 $route['admin/informasi/store'] = 'admin/informasi/store';
 $route['admin/informasi/show/(:num)'] = 'admin/informasi/show/$1';
@@ -126,6 +126,20 @@ $route['admin/config'] = 'admin/config/index';
 $route['admin/config/update'] = 'admin/config/update';
 $route['admin/config/show-provinsi'] = 'admin/config/show_provinsi';
 
+// Pelaku Ekraf
+$route['admin/pelaku-ekraf'] = 'admin/pelakuekraf/index';
+$route['admin/pelaku-ekraf/store'] = 'admin/pelakuekraf/store';
+$route['admin/pelaku-ekraf/show/(:num)'] = 'admin/pelakuekraf/show/$1';
+$route['admin/pelaku-ekraf/update'] = 'admin/pelakuekraf/update';
+$route['admin/pelaku-ekraf/destroy'] = 'admin/pelakuekraf/destroy';
+
+// Event
+$route['admin/event-ekraf'] = 'admin/eventekraf/index';
+$route['admin/event-ekraf/store'] = 'admin/eventekraf/store';
+$route['admin/event-ekraf/show/(:num)'] = 'admin/eventekraf/show/$1';
+$route['admin/event-ekraf/update'] = 'admin/eventekraf/update';
+$route['admin/event-ekraf/destroy'] = 'admin/eventekraf/destroy';
+
 
 // ======================================================================= User
 // User Auth
@@ -139,6 +153,11 @@ $route['event-wisata'] = 'guest/event/index';
 $route['event-wisata/(:num)'] = 'guest/event/index/$1';
 $route['event-wisata/(:any)'] = 'guest/event/show/$1';
 
+// Event Ekraf
+$route['event-ekraf'] = 'guest/eventekraf/index';
+$route['event-ekraf/(:num)'] = 'guest/eventekraf/index/$1';
+$route['event-ekraf/(:any)'] = 'guest/eventekraf/show/$1';
+
 // Informasi
 $route['informasi-wisata'] = 'guest/informasi/index';
 $route['informasi-wisata/(:num)'] = 'guest/informasi/index/$1';
@@ -148,6 +167,11 @@ $route['informasi-wisata/(:any)'] = 'guest/informasi/show/$1';
 $route['daftar-wisata'] = 'guest/wisata/index';
 $route['daftar-wisata/(:num)'] = 'guest/wisata/index/$1';
 $route['daftar-wisata/(:any)'] = 'guest/wisata/show/$1';
+
+// Pelaku
+$route['pelaku-ekraf'] = 'guest/pelaku/index';
+$route['pelaku-ekraf/(:num)'] = 'guest/pelaku/index/$1';
+$route['pelaku-ekraf/detail/(:any)'] = 'guest/pelaku/show/$1';
 
 // Maps
 $route['maps-wisata'] = 'guest/maps/index';

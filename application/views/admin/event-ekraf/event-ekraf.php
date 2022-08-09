@@ -34,8 +34,8 @@
                           <td><?= $value['datetime_mulai_event'] ?> - <?= $value['datetime_akhir_event'] ?></td>
                           <td><img src="<?= $value['thumbnail'] ?>"></td>
                           <td>
-                            <a href="#" class="btn btn-primary btn-sm edits" data-toggle="modal" data-target="#EditModal" onclick="prepare_update('<?= $value['id_event'] ?>')">Ubah</a>
-                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_delete" onclick="prepare_delete('<?= $value['id_event'] ?>')">Hapus</a>
+                            <a href="#" class="btn btn-primary btn-sm edits" data-toggle="modal" data-target="#EditModal" onclick="prepare_update('<?= $value['id_event_ekraf'] ?>')">Ubah</a>
+                            <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_delete" onclick="prepare_delete('<?= $value['id_event_ekraf'] ?>')">Hapus</a>
                           </td>
                         </tr>
                       <?php } ?>
@@ -57,7 +57,7 @@
                   <div class="modal-body">
                     <form id="addForm" action="" method="POST" name="addForm" class="form-horizontal" enctype="multipart/form-data">
 
-                      <input type="hidden" name="id_event" id="id_event">
+                      <input type="hidden" name="id_event_ekraf" id="id_event_ekraf">
 
                       <div class="row">
                         <div class="col-md-6">
@@ -144,7 +144,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form action="<?= base_url('admin/event/destroy'); ?>" method="post">
+                  <form action="<?= base_url('admin/event-ekraf/destroy'); ?>" method="post">
                     <div class="modal-body">
                       <input type="hidden" name="id_delete" id="id_delete">
                       <p>Apakah anda yakin menghapus <b><span id="text_delete"></span></b> ?</p>
@@ -173,8 +173,8 @@
     $('#tambah').click(function() {
       $('#saveBtn').val("add");
       $('#modalHeader').html("Tambah Event");
-      $("#addForm").attr('action', "<?= base_url('admin/event/store'); ?>");
-      $("#id_event").val('');
+      $("#addForm").attr('action', "<?= base_url('admin/event-ekraf/store'); ?>");
+      $("#id_event_ekraf").val('');
       $("#id_kategori_event").val('');
       $("#nama_event").val('');
       $("#lokasi").val('');
@@ -188,10 +188,10 @@
 
     function prepare_update(id) {
       $('#modalHeader').html("Edit Event");
-      $("#addForm").attr('action', "<?= base_url('admin/event/update'); ?>");
+      $("#addForm").attr('action', "<?= base_url('admin/event-ekraf/update'); ?>");
 
-      $.getJSON('<?= base_url(); ?>admin/event/show/' + id, function(data) {
-        $("#id_event").val(data.id_event);
+      $.getJSON('<?= base_url(); ?>admin/event-ekraf/show/' + id, function(data) {
+        $("#id_event_ekraf").val(data.id_event_ekraf);
         $("#id_kategori_event").val(data.id_kategori_event);
         $("#nama_event").val(data.nama_event);
         $("#lokasi").val(data.lokasi);
@@ -209,8 +209,8 @@
       $("#modalDeleteHeader").html('Hapus Event');
       $("#id_delete").empty();
 
-      $.getJSON('<?= base_url(); ?>admin/event/show/' + id, function(data) {
-        $("#id_delete").val(data.id_event);
+      $.getJSON('<?= base_url(); ?>admin/event-ekraf/show/' + id, function(data) {
+        $("#id_delete").val(data.id_event_ekraf);
         $("#text_delete").text(data.nama_event);
       });
     }

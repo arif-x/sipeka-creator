@@ -1,6 +1,6 @@
 <?php
 
-class Event extends CI_Controller {
+class EventEkraf extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -8,22 +8,22 @@ class Event extends CI_Controller {
 		if (!$this->auth_model->current_user()) {
 			return redirect(base_url().'admin/login');
 		}
-		$this->load->model('admin/Event_model', 'event_model');
+		$this->load->model('admin/EventEkraf_model', 'eventekraf_model');
 		$this->load->model('admin/kategoriEvent_model', 'kategorievent_model');
 	}
 
 	public function index(){
-		$data['title'] = 'Event';
+		$data['title'] = 'Event Ekraf';
 
-		$data['event'] = $this->event_model->index();
+		$data['event'] = $this->eventekraf_model->index();
 		$data['kategori'] = $this->kategorievent_model->index();
 		$this->load->view('template/admin/header', $data);
-		$this->load->view('admin/event/event', $data);
+		$this->load->view('admin/event-ekraf/event-ekraf', $data);
 		$this->load->view('template/admin/footer');
 	}
 
-	public function show($id_event){
-		$data = $this->event_model->show($id_event);
+	public function show($id_event_ekraf){
+		$data = $this->eventekraf_model->show($id_event_ekraf);
 		echo json_encode($data);
 	}
 
@@ -38,12 +38,12 @@ class Event extends CI_Controller {
 		$originalImgName = date("Y-m-d-H:i:s") .'.'. $extension;
 		$new_name = str_replace(':', '-', $originalImgName);
 
-		$config['upload_path'] = FCPATH.'/upload/event/';
+		$config['upload_path'] = FCPATH.'/upload/event-ekraf/';
 		$config['allowed_types'] = 'jpeg|gif|png|jpg';
 		$config['file_name'] = $new_name;
 		$config['overwrite'] = true;
 
-		$urlfix = base_url() . "upload/event/" . $new_name;
+		$urlfix = base_url() . "upload/event-ekraf/" . $new_name;
 
 		$this->load->library('upload', $config);
 		if($this->upload->do_upload('thumbnail')){
@@ -58,16 +58,16 @@ class Event extends CI_Controller {
 				'datetime_akhir_event' => $this->input->post('datetime_akhir_event')
 			];
 
-			$insert = $this->event_model->store($data);
+			$insert = $this->eventekraf_model->store($data);
 			return redirect(base_url().'admin/event');
 		} else {
 			$data['error'] = $this->upload->display_errors();
 		}
 	}
 
-	public function update_index($id_event){
-		$data['title'] = 'Edit Event';
-		$data = $this->event_model->show($id_event);
+	public function update_index($id_event_ekraf){
+		$data['title'] = 'Edit Event Ekraf';
+		$data = $this->eventekraf_model->show($id_event_ekraf);
 
 	}
 
@@ -78,12 +78,12 @@ class Event extends CI_Controller {
 		$originalImgName = date("Y-m-d-H:i:s") .'.'. $extension;
 		$new_name = str_replace(':', '-', $originalImgName);
 
-		$config['upload_path'] = FCPATH.'/upload/event/';
+		$config['upload_path'] = FCPATH.'/upload/event-ekraf/';
 		$config['allowed_types'] = 'jpeg|gif|png|jpg';
 		$config['file_name'] = $new_name;
 		$config['overwrite'] = true;
 
-		$urlfix = base_url() . "upload/event/" . $new_name;
+		$urlfix = base_url() . "upload/event-ekraf/" . $new_name;
 
 		$this->load->library('upload', $config);
 		if($this->upload->do_upload('thumbnail')){
@@ -98,8 +98,8 @@ class Event extends CI_Controller {
 				'datetime_akhir_event' => $this->input->post('datetime_akhir_event')
 			];
 
-			$update = $this->event_model->update($this->input->post('id_event'), $data);
-			return redirect(base_url().'admin/event');
+			$update = $this->eventekraf_model->update($this->input->post('id_event_ekraf'), $data);
+			return redirect(base_url().'admin/event-ekraf');
 		} else {
 			$data = [
 				'id_kategori_event' => $this->input->post('id_kategori_event'), 
@@ -111,13 +111,13 @@ class Event extends CI_Controller {
 				'datetime_akhir_event' => $this->input->post('datetime_akhir_event')
 			];
 
-			$update = $this->event_model->update($this->input->post('id_event'), $data);
-			return redirect(base_url().'admin/event');
+			$update = $this->eventekraf_model->update($this->input->post('id_event_ekraf'), $data);
+			return redirect(base_url().'admin/event-ekraf');
 		}
 	}
 
 	public function destroy(){
-		$data = $this->event_model->destroy($this->input->post('id_delete'));
-		return redirect(base_url().'admin/event');
+		$data = $this->eventekraf_model->destroy($this->input->post('id_delete'));
+		return redirect(base_url().'admin/event-ekraf');
 	}
 }

@@ -60,6 +60,8 @@
                     <div>Informasi</div>
                   </div>
                   <nav class="dropdown-list w-dropdown-list">
+                    <a href="<?= base_url() ?>pelaku-ekraf" class="dropdown-link w-dropdown-link">Pelaku Ekraf</a>
+                    <a href="<?= base_url() ?>event-ekraf" class="dropdown-link w-dropdown-link">Event Ekraf</a>
                     <a href="<?= base_url() ?>maps-wisata" class="dropdown-link w-dropdown-link">Maps Wisata</a>
                     <a href="<?= base_url() ?>daftar-wisata" class="dropdown-link w-dropdown-link">Daftar Wisata</a>
                     <a href="<?= base_url() ?>informasi-wisata" class="dropdown-link w-dropdown-link">Informasi Wisata</a>
@@ -361,6 +363,8 @@
             <div class="offcanvas-menu-list">
               <div data-w-id="b972cccf-195b-c621-4be6-a86d09c1bdb0" class="fa on-dark close-button-offcanvas"></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>" class="offcanvas-menu-item item1">Home</a></div>
+              <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>pelaku-ekraf" class="offcanvas-menu-item item1">Pelaku Ekraf</a></div>
+              <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-ekraf" class="offcanvas-menu-item item2">Event EKraf</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>maps-wisata" class="offcanvas-menu-item item1">Maps Wisata</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>daftar-wisata" class="offcanvas-menu-item item2">Daftar Wisata</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi-wisata" class="offcanvas-menu-item item3">Informasi Wisata</a></div>
@@ -380,6 +384,6 @@
           </div>
           <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
           <script src="<?= base_url() ?>assets_guest/js/webflow.js" type="text/javascript"></script>
-          </body>
+        </body>
 
-          </html>
+        </html>

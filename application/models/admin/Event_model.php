@@ -34,6 +34,10 @@ class Event_model extends CI_Model {
 			}
 		}
 
+		$slug = [
+			'slug' => $slug_name 
+		];
+
 		$this->db->where('id_event', $id)->update($this->table, $slug);
 		$query = $this->db->last_query();
 
