@@ -159,9 +159,9 @@ $route['event-ekraf/(:num)'] = 'guest/eventekraf/index/$1';
 $route['event-ekraf/(:any)'] = 'guest/eventekraf/show/$1';
 
 // Informasi
-$route['informasi-wisata'] = 'guest/informasi/index';
-$route['informasi-wisata/(:num)'] = 'guest/informasi/index/$1';
-$route['informasi-wisata/(:any)'] = 'guest/informasi/show/$1';
+$route['informasi'] = 'guest/informasi/index';
+$route['informasi/(:num)'] = 'guest/informasi/index/$1';
+$route['informasi/(:any)'] = 'guest/informasi/show/$1';
 
 // Informasi
 $route['daftar-wisata'] = 'guest/wisata/index';

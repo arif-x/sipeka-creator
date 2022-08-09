@@ -1,7 +1,7 @@
   <div class="section is-header position-relative overflow-hidden">
     <div class="container position-relative">
       <div class="col lg-12">
-        <div class="breadcrumb margin-bottom-double"><a href="<?= base_url() ?>">Home</a><span class="fa margin-left-small margin-right-small is-xsmall"></span><a href="<?= base_url('informasi-wisata') ?>">Informasi</a><span class="fa margin-left-small margin-right-small is-xsmall"></span><?= $informasi[0]['judul_informasi'] ?></div>
+        <div class="breadcrumb margin-bottom-double"><a href="<?= base_url() ?>">Home</a><span class="fa margin-left-small margin-right-small is-xsmall"></span><a href="<?= base_url('informasi') ?>">Informasi</a><span class="fa margin-left-small margin-right-small is-xsmall"></span><?= $informasi[0]['judul_informasi'] ?></div>
         <h1 class="heading-beta on-dark"><?= $informasi[0]['judul_informasi'] ?></h1>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="col lg-4 md-12"><img src="<?= $value['img_informasi'] ?>" alt="" class="margin-bottom img-news">
           <div class="c-gridpost__category"><a href="#"><?= $value['kategori_informasi'] ?></a></div>
           <h3 class="margin-bottom-small"><?= $value['judul_informasi'] ?></h3>
-          <div class="margin-bottom"><!-- Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. --></div><a href="<?= base_url('informasi-wisata/').$value['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
+          <div class="margin-bottom"><!-- Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. --></div><a href="<?= base_url('informasi/').$value['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a></div>
         <?php } ?>
       </div>
     </div>

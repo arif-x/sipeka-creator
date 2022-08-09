@@ -64,8 +64,8 @@
                     <a href="<?= base_url() ?>event-ekraf" class="dropdown-link w-dropdown-link">Event Ekraf</a>
                     <a href="<?= base_url() ?>maps-wisata" class="dropdown-link w-dropdown-link">Maps Wisata</a>
                     <a href="<?= base_url() ?>daftar-wisata" class="dropdown-link w-dropdown-link">Daftar Wisata</a>
-                    <a href="<?= base_url() ?>informasi-wisata" class="dropdown-link w-dropdown-link">Informasi Wisata</a>
                     <a href="<?= base_url() ?>event-wisata" class="dropdown-link w-dropdown-link">Event Wisata</a>
+                    <a href="<?= base_url() ?>informasi" class="dropdown-link w-dropdown-link">Informasi</a>
                   </nav>
                 </div>
                 <a href="<?= base_url() ?>kontak" class="nav-link on-dark w-nav-link">Kontak</a>
@@ -367,8 +367,8 @@
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-ekraf" class="offcanvas-menu-item item2">Event EKraf</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>maps-wisata" class="offcanvas-menu-item item1">Maps Wisata</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>daftar-wisata" class="offcanvas-menu-item item2">Daftar Wisata</a></div>
-              <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi-wisata" class="offcanvas-menu-item item3">Informasi Wisata</a></div>
               <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-wisata" class="offcanvas-menu-item item4">Event Wisata</a></div>
+              <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi" class="offcanvas-menu-item item3">Informasi</a></div>
               <?php
               $CI = &get_instance();
               $CI->load->model('auth/admin_model', 'auth_model');

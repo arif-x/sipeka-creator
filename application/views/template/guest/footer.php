@@ -51,8 +51,8 @@
     <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-ekraf" class="offcanvas-menu-item item2">Event EKraf</a></div>
     <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>maps-wisata" class="offcanvas-menu-item item1">Maps Wisata</a></div>
     <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>daftar-wisata" class="offcanvas-menu-item item2">Daftar Wisata</a></div>
-    <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi-wisata" class="offcanvas-menu-item item3">Informasi</a></div>
     <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>event-wisata" class="offcanvas-menu-item item4">Event Wisata</a></div>
+    <div class="offcanvas-menu-item-wrapper"><a href="<?= base_url() ?>informasi" class="offcanvas-menu-item item3">Informasi</a></div>
     <?php
     $CI = &get_instance();
     $CI->load->model('auth/admin_model', 'auth_model');

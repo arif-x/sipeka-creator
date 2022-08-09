@@ -7,12 +7,12 @@
       <div class="breadcrumb margin-bottom-double"><a href="<?= base_url() ?>">Home</a><span class="fa margin-left-small margin-right-small is-xsmall"></span>Informasi</div>
       <div class="header-content-wrapper-3">
         <div class="c-gridpost__category"><a href="#"><?= $latest_single[0]['kategori_informasi'] ?></a></div>
-        <a href="<?= base_url('informasi-wisata/') . $latest_single[0]['judul_informasi'] ?>" class="color-body-text white-md w-inline-block">
+        <a href="<?= base_url('informasi/') . $latest_single[0]['judul_informasi'] ?>" class="color-body-text white-md w-inline-block">
           <h1 class="margin-bottom-small"><?= $latest_single[0]['judul_informasi'] ?></h1>
           <div class="margin-bottom text-large"></div>
           </br>
           </br>
-        </a><a href="<?= base_url('informasi-wisata/') . $latest_single[0]['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a>
+        </a><a href="<?= base_url('informasi/') . $latest_single[0]['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a>
       </div>
     </div>
     <div class="col lg-5 no-margin-bottom"></div>
@@ -22,9 +22,9 @@
 <div class="section">
   <div class="container flex-horizontal container-wrap">
     <?php foreach ($informasi as $key => $value) { ?>
-      <div class="col lg-4 md-12 margin-bottom-quad"><a href="<?= base_url('informasi-wisata/') . $value['slug'] ?>" class="w-inline-block"><img src="<?= $value['img_informasi'] ?>" alt="" class="margin-bottom img-news"></a>
+      <div class="col lg-4 md-12 margin-bottom-quad"><a href="<?= base_url('informasi/') . $value['slug'] ?>" class="w-inline-block"><img src="<?= $value['img_informasi'] ?>" alt="" class="margin-bottom img-news"></a>
         <div class="c-gridpost__category"><a href="#"><?= $value['kategori_informasi'] ?></a></div>
-        <h3 class="margin-bottom-small"><?= $value['judul_informasi'] ?></h3><a href="<?= base_url('informasi-wisata/') . $value['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a>
+        <h3 class="margin-bottom-small"><?= $value['judul_informasi'] ?></h3><a href="<?= base_url('informasi/') . $value['slug'] ?>" class="cta-link"><span class="margin-right">Lihat Lebih Lanjut</span> <span class="fa c-cta1_arrow-hovered"></span> <span class="fa c-cta1__arrow-normal"></span></a>
       </div>
 
     <?php } ?>
