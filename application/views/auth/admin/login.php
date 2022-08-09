@@ -31,8 +31,8 @@
                         <div class="card">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="auth-left-wrapper">
-                                        <img src="<?= base_url() ?>/assets_guest/images/bali-beach.jpg" style="object-fit: cover !important;width: 219px !important;height: 400px;">
+                                    <div class="auth-left-wrapper" style="background-image: url('<?= base_url() ?>/assets_guest/images/auths.jpg')">
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-8 pl-md-0">

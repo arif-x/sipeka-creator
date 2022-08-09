@@ -33,16 +33,17 @@ class Slider extends CI_Controller
 		$files = $_FILES['slider']['tmp_name'];
 		$files_data = explode('.', $_FILES['slider']['name']);
 		$extension = end($files_data);
-		$originalImgName = date("Y-m-d-H:i:s") . '.' . $extension;
-		$new_name = str_replace(' ', '_', $_FILES['slider']['name']);
-		// $new_name = $_FILES['slider']['name'];
+		$originalImgName = date("Y-m-d-H:i:s") .'.'. $extension;
+		$new_name = str_replace(':', '-', $originalImgName);
 
 		$config['upload_path'] = FCPATH . '/upload/slider/';
-		$config['allowed_types'] = 'mp4';
 		$config['file_name'] = $new_name;
+		$config['allowed_types'] = 'mp4';
 		$config['overwrite'] = true;
 
 		$urlfix = base_url() . "upload/slider/" . $config['file_name'];
+
+		echo $new_name;
 
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('slider')) {
@@ -54,7 +55,8 @@ class Slider extends CI_Controller
 
 
 			return redirect(base_url() . 'admin/slider');
-			// return redirect(base_url() . 'admin/slider');
+			// echo "string";
+			return redirect(base_url() . 'admin/slider');
 		} else {
 			return redirect(base_url() . 'admin/slider');
 		}
