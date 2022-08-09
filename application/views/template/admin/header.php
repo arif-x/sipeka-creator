@@ -46,6 +46,18 @@
           </li>
           <li class="nav-item nav-category">Dashboard</li>
           <li class="nav-item">
+            <a href="<?= base_url() ?>admin/pelaku-ekraf" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Data Pelaku Ekraf</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url() ?>admin/event-ekraf" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Data Event Ekraf</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= base_url() ?>admin/wisata" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Data Wisata</span>
